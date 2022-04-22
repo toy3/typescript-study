@@ -1,0 +1,13 @@
+1. 먼저 npm 으로 typescript를 설치해준다. 
+    npm install -g typescript
+
+2. 확장자 .ts 인 타입스크립트 파일을 작성한다.
+
+3. 타입스크립트를 자바스크립트로 컴파일 해주기.
+    터미널에서 tsc app.ts 입력 > app.js 파일이 생성된다.
+
+4. app.ts에 "Duplicate function implementation." 에러 뜨는데 vscode의 버그 같은것임. 
+    터미널에서 tsc --init 입력 > tsconfig.json 파일을 추가해준다. 
+    
+5. 원하는 파일이 저장시 자동으로 자바스크립트로 컴파일 되게 하기
+    터미널에서 tsc -w app.ts 입력
