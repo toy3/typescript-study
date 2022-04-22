@@ -1,4 +1,5 @@
 /* 
+
 객체지향 프로그래밍에서 class와 object는 동전의 양면같은 관계.
 객체는 클래스를 통해서 만들어질 수 있고, 클래스는 객체가 어떤 모습을 가질지 정의하는 객체의 뼈대, 설계도, 생산틀 역할이다. 
 클래스 속에서 정의된 함수들은(메서드) 클래스 안에서 정의된 변수(프로퍼티)에 this.로 접근 가능하기 때문에 상대적으로 적은 매개변수를 가지는 장점이 있다.
@@ -21,30 +22,17 @@ Private
 Protected
 : 클래스 내부, 그리고 상속받은 자식 클래스에서 접근가능.
 
-
-
 */
 
+// 객체가 생성될 때, Constructor의 매개변수로 전달된 값은, 객체의 프로퍼티 값으로 자동으로 그 값이 초기화되고 할당됨.
 class Employee {
-  private _fullName: string;
-  age: number;
-  jobTitle: string;
-  hourlyRate: number;
-  workingHoursPerWeek: number;
-
   constructor(
-    fullName: string,
-    age: number,
-    jobtitle: string,
-    hourlyRate: number,
-    workingHoursPerWeek: number
-  ) {
-    this._fullName = fullName;
-    this.age = age;
-    this.jobTitle = jobtitle;
-    this.hourlyRate = hourlyRate;
-    this.workingHoursPerWeek = workingHoursPerWeek;
-  }
+    private _fullName: string,
+    private _age: number,
+    private _jobTitle: string,
+    private _hourlyRate: number,
+    private _workingHoursPerWeek: number
+  ) {}
 
   // getter와 setter
   // ★★★ tsc -w -target es5 app05.ts 로 컴파일해야 에러 안뜸.
@@ -59,8 +47,8 @@ class Employee {
   // 메서드
   printEmployeeDetails = (): void => {
     console.log(
-      `${this._fullName} 의 직업은 ${this.jobTitle} 이고, 일주일의 수입은 ${
-        this.hourlyRate * this.workingHoursPerWeek
+      `${this._fullName} 의 직업은 ${this._jobTitle} 이고, 일주일의 수입은 ${
+        this._hourlyRate * this._workingHoursPerWeek
       } 달러 이다.`
     );
   };

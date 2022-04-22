@@ -1,4 +1,5 @@
 /*
+
 객체지향 프로그래밍에서 class와 object는 동전의 양면같은 관계.
 객체는 클래스를 통해서 만들어질 수 있고, 클래스는 객체가 어떤 모습을 가질지 정의하는 객체의 뼈대, 설계도, 생산틀 역할이다.
 클래스 속에서 정의된 함수들은(메서드) 클래스 안에서 정의된 변수(프로퍼티)에 this.로 접근 가능하기 때문에 상대적으로 적은 매개변수를 가지는 장점이 있다.
@@ -21,21 +22,20 @@ Private
 Protected
 : 클래스 내부, 그리고 상속받은 자식 클래스에서 접근가능.
 
-
-
 */
+// 객체가 생성될 때, Constructor의 매개변수로 전달된 값은, 객체의 프로퍼티 값으로 자동으로 그 값이 초기화되고 할당됨.
 var Employee = /** @class */ (function () {
-    function Employee(fullName, age, jobtitle, hourlyRate, workingHoursPerWeek) {
+    function Employee(_fullName, _age, _jobTitle, _hourlyRate, _workingHoursPerWeek) {
         var _this = this;
+        this._fullName = _fullName;
+        this._age = _age;
+        this._jobTitle = _jobTitle;
+        this._hourlyRate = _hourlyRate;
+        this._workingHoursPerWeek = _workingHoursPerWeek;
         // 메서드
         this.printEmployeeDetails = function () {
-            console.log("".concat(_this._fullName, " \uC758 \uC9C1\uC5C5\uC740 ").concat(_this.jobTitle, " \uC774\uACE0, \uC77C\uC8FC\uC77C\uC758 \uC218\uC785\uC740 ").concat(_this.hourlyRate * _this.workingHoursPerWeek, " \uB2EC\uB7EC \uC774\uB2E4."));
+            console.log("".concat(_this._fullName, " \uC758 \uC9C1\uC5C5\uC740 ").concat(_this._jobTitle, " \uC774\uACE0, \uC77C\uC8FC\uC77C\uC758 \uC218\uC785\uC740 ").concat(_this._hourlyRate * _this._workingHoursPerWeek, " \uB2EC\uB7EC \uC774\uB2E4."));
         };
-        this._fullName = fullName;
-        this.age = age;
-        this.jobTitle = jobtitle;
-        this.hourlyRate = hourlyRate;
-        this.workingHoursPerWeek = workingHoursPerWeek;
     }
     Object.defineProperty(Employee.prototype, "fullName", {
         // getter와 setter
